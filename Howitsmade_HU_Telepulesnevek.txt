@@ -1,0 +1,22 @@
+1. lépés 2018 01 17
+egy html fájlban létrehoztam az alaptérképet az alábbi tutorial alapján:
+http://joshuafrazier.info/leaflet-basics/
+tilesetet a Thunderforest.Pioneert választottam - regisztráltam a thunderforesthez
+
+2. lépés 2018 01 18
+adattisztítás - hiányos sorok keresése, javítása
+szűrések elvégzése: Ákos perlben, én excelben
+csv ből geojson konvertálása itt:https://mygeodata.cloud/
+geojson betöltése az alaptérképre markerekkel - a teljes adatmennyiséggel elfekszik, részmennyiséggel lefut.
+
+3. lépés 2018 01 18
+előkép keresése
+összevont markerekkel: https://www.mapbox.com/mapbox.js/example/v1.0.0/markercluster-custom-marker-icons/
+
+minta: https://www.mapbox.com/help/analysis-with-turf/
+a különböző feltételeknek megfelelő elemeket különböző layerekre rakom
+
+4. lépés 2018 01 024
+készítettem témánként csvket, majd abból geojsont. vár, bánya, patak és folyó
+terv szerint mindegyiket külön layerbe tölteném be, és az interaktív layer kezelővel jeleníteném meg vagy rejteném el.
+egyelőre a folyok layert betölti gyorsan, de egyrészt nem sikerült megoldanom, hogy a betöltött adatok külön layerekre kerüljenek, illetve hogy csak azt töltse be, ami az aktív layeren van. ez valószínűleg nem is fog sikerülni, így az adatok mennyisége miatt nagy kérdés, hogy hogyan lehet használható sebességű a térkép

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Magyar településnevek térképe</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="leaflet.css" />
+	<script src="libraries/p5.js"></script>
+	<script src="libraries/p5.dom.js"></script>
+	<script src="libraries/p5.sound.js"></script>
+	<script src="sketch.js"></script>
+    <script src="leaflet.js"></script>
+    <style>
+    #map { width: 900px; height: 600px; } 
+
+		body {
+			margin:0;
+			padding:0;
+			overflow: hidden;
+		}
+		canvas {
+			margin:auto;
+		}
+	</style>
+    
+</head>
+<body>
+    <div id="map"></div>
+    
+
+    <script type="text/javascript">
+
+
+  // initialize the map
+    var map = L.map('map').setView([47.49, 19.04], 7);
+
+    // load a tile layer
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18,
+    minZoom: 7,          
+    id: 'mapbox.pencil',
+    accessToken: 'pk.eyJ1IjoidmVzemV0dGZlanN6ZSIsImEiOiJjamJmOWNkeWkyM3R0MzFub2xmbHZtZ3JqIn0.Y2ytr6uYYyMjd9P-8-06Qg'
+    }).addTo(map);
+        
+    L.geoJSON(geojsonFeature).addTo(map);
+    
+  </script>
+</body>
+</html>
